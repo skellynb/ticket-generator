@@ -1,5 +1,0 @@
-@import "tailwindcss";
-
-input, label {
-  cursor: pointer !important;
-}
