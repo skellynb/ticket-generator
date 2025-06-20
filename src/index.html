@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conference Ticket Generator</title>
+  
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@75..100,200..900&display=swap" rel="stylesheet" />
+</head>
+
+
+<body class="font-[Inconsolata] relative bg-[url('../assets/images/background-desktop.png')] bg-cover bg-center bg-no-repeat min-h-screen"
+>
+
+
+<div>
+  <img
+    src="/assets/images/pattern-lines.svg"
+    alt="pattern"
+    class="absolute w-full h-full object-cover opacity-50 pointer-events-none"
+  >
+
+  <img
+    src="/assets/images/pattern-squiggly-line-top.svg"
+    alt="squiggly-line-top"
+    class="absolute top-[50px] right-0 w-[500px] h-auto pointer-events-none"
+  >
+
+  <img
+    src="/assets/images/pattern-circle.svg"
+    class="absolute top-[-70px] left-0 w-auto pointer-events-none"
+  >
+
+  <img
+    src="/assets/images/pattern-circle.svg"
+    class="absolute bottom-[200px] right-[300px] w-[150px] pointer-events-none"
+  >
+
+  <img
+    src="/assets/images/pattern-squiggly-line-bottom-desktop.svg"
+    alt="squiggly-bottom"
+    class="absolute bottom-0 left-0 w-[500px] h-auto pointer-events-none"
+  >
+
+  <div class="flex justify-center items-center">
+    <img
+      src="/assets/images/logo-full.svg"
+      alt="logo"
+      class="relative z-10 max-w-[200px] w-full h-auto mt-10"
+    >
+  </div>
+</div>
+<div>
+  <main class="flex flex-col items-center px-4 text-center">
+
+<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[hsl(0,0%,100%)] text-center leading-tight">
+    Your Journey to Coding Conf<br> 2025 Starts Here!
+  </h1>
+
+  <P class="text-[hsl(245,15%,58%)] text-center tracking-tighter">Secure your spot at next year's biggest coding conference.</P>
+
+</div>
+
+
+    <!-- form starts here -->
+
+  <form id="js-ticketForm" novalidate>
+  <div class="flex flex-col items-center mt-8 min-h-screen text-xs">
+ <div class="flex flex-col gap-6 w-full max-w-[300px] px-4">
+    
+    <!-- Upload Avatar -->
+    <div>
+      <p class="text-[hsl(245,15%,58%)] mb-1">Upload Avatar</p>
+      
+      <label class="relative blockw-full max-w-[300px] cursor-pointer">
+  <input
+    type="file"
+    id="js-upload-avatar"
+    accept="image/png, image/jpeg"
+    class="absolute inset-0 opacity-0 z-10 cursor-pointer"
+  />
+  <div id="js-upload-preview"
+  class="h-[100px] border border-dashed border-[hsl(245,15%,58%)] bg-[hsl(248,70%,10%)] rounded px-6 pt-6 text-[hsl(245,15%,58%)] text-center flex flex-col justify-center gap-4">
+    <img id="js-previw-img"
+
+      src="/assets/images/icon-upload.svg"
+      alt="upload"
+      class="mx-auto w-6 h-6 bg-[hsl(245,15%,58%)] rounded p-[0.35rem]"
+    />
+    
+    <span id="js-upload-text" class="block text-xs mt-1">Drag and drop or click to upload</span>
+    
+  
+  </div>
+</label>
+
+<div  class="flex items-center gap-1">
+  <span id="js-svg-color">    
+  <img  class=" w-[15px] h-[15px]" src="/assets/images/icon-info.svg">
+  </span>
+      <p id="js-upload-error" class=" text-[hsl(245,15%,58%)] tracking-tighter mt-1 text-[0.6rem]">
+        Upload your photo (JPG or PNG, max size: 500KB).
+      </p>
+      <p id="js-upload-error-text" class="text-red-500 text-xs mt-1"></p>
+      </div>
+    </div>
+
+    <!-- Full Name -->
+    <div>
+      <p class="text-[hsl(245,15%,58%)] mb-1">Full Name</p>
+      
+      <input 
+      id="js-fullName"
+      type="text"
+      required 
+      class="w-full bg-[hsl(248,70%,10%)] text-[hsl(245,15%,58%)] px-6 py-3 rounded border border-[hsl(245,15%,58%)]" />
+      <p id="js-name-error" class="hidden text-red-500 text-xs mt-1 flex items-center gap-1"></p>
+    </div>
+
+    <!-- Email -->
+    <div>
+      <p class="text-[hsl(245,15%,58%)] mb-1">Email Address</p>
+      <input 
+      id="js-email"
+      required
+      type="text" placeholder="example@email.com" class="w-full bg-[hsl(248,70%,10%)] text-white px-6 py-3 rounded shadow-md border border-[hsl(245,15%,58%)]" />
+      <p id="js-email-error" class="hidden text-red-500 text-xs mt-1 flex items-center gap-1"></p>
+    </div>
+
+    <!-- GitHub -->
+    <div>
+      <p class="text-[hsl(245,15%,58%)] mb-1">GitHub Username</p>
+      <input 
+      id="js-github"
+      type="text" 
+      placeholder="@yourusername" 
+      required
+      class="w-full bg-[hsl(248,70%,10%)] text-white px-6 py-3 rounded border border-[hsl(245,15%,58%)]" />
+      <p id="js-github-error" class="hidden text-red-500 text-xs mt-1 flex items-center gap-1"></p>
+    </div>
+
+    <!-- Button -->
+    <div>
+      <button 
+      type="submit"
+      class="w-full bg-[hsl(7,71%,60%)] text-black px-6 py-3 rounded tracking-tighter text-center">
+       Generate My Ticket
+      </button>
+    </div>
+    
+
+  </div>
+</div>
+<p 
+    id="formError"
+    class="text-red-500 mt-2 text-sm hidden"></p>
+</form>
+</main>
+<script type="module" src="/script/main.js"></script>
+
+</body>
+</html>
